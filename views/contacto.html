@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO de pasteleria Marta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css">
+</head>
+<body>
+    <!--CABECERA DE LA PAGINA-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                  <img src="/imagenes/LOGO-Pasteleria-Marta.png" alt="logo" width="50" height="50">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto menu">
+                      <li class="nav-item">
+                          <a class="nav-link" href="/index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/views/galeria.html">Productos</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="/views/contacto.html">Contacto</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+        <!-- Ondulación SVG -->
+     
+      </nav>
+      <div class="wave">
+      <svg viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 20 Q 30 0 60 20 T 120 20 V 30 H 0 Z" fill="#ffc0cb"></path>
+      </svg>
+  </div> 
+  </header>
+<!--SLIDER DE CONTACTO-->
+
+<div class="container-slider">
+    <div class="slider-wapprer">
+        <div class="slider active">
+            <img id="slide1" src="/imagenes/contacto0.jfif" width="" height="" alt="">
+            <img id="slide2" src="/imagenes/contacto1.jfif" alt="" width="" height="">    
+            <img id="slide3" src="/imagenes/contacto2.jfif" alt="" width="" height="">
+            <img id="slide4" src="/imagenes/contacto3.jfif" alt="" width="" height=""> 
+            <img id="slide5" src="/imagenes/contacto5.png" alt="" width="" height=""> 
+               
+        </div>
+        <div class="menuslider">
+            <a href="#slide1"></a>
+            <a href="#slide2"></a>
+            <a href="#slide3"></a>
+            <a href="#slide4"></a>
+            <a href="#slide5"></a>
+            
+            
+        </div>
+    </div>
+</div>
+<!--contenedor formulario y mapa-->
+<div class="container-general">
+<h2 class="title-form text-center">Rellena el siguiente formulario</h2>
+<div id="form-map-container">
+
+<!--FORMULARIO-->
+
+<div id="contenedor-form">
+    
+    <form action="lala.php" method="post" class="formulario" id="formulario">
+        <fieldset class="form-control">
+            <div>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" class="valida" required>
+                <br>
+                <small>Error mensaje</small>
+            </div>
+            <div>
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" name="apellidos" class="valida" required>
+                <br>
+                <small>Error mensaje</small>
+            </div>
+            <div>
+                <label for="telefono">Telefono de contacto:</label><br>
+                <input type="tel"  id="telefono" name="telefono" class="valida" required>
+                <br>
+                <small>Error mensaje</small>
+            </div>
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" class="valida" required>
+                <br>
+                <small>Error mensaje</small>
+            </div>              
+        
+            <label>Comentarios</label>
+            <textarea name="comentarios" rows="3" cols="82"></textarea>
+        </fieldset>
+        <br>
+        <fieldset>
+            <input class="colorgris" type="submit" value="Enviar Formulario">
+            <input class="colorgris" type="reset" value="Borrar Formulario">
+        </fieldset>
+    </form>
+</div>
+  <!--Mapa dinámico-->
+  <div class="contenedor-map">
+    <div id="map"></div>
+       <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js" ></script>
+       <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+       <script>
+            if(navigator.geolocation){
+               navigator.geolocation.getCurrentPosition(function(position){
+               var latitude = position.coords.latitude;
+               var longitude = position.coords.longitude;
+
+               var map = L.map('map', {
+               center: [latitude, longitude],
+               zoom: 12
+               });
+
+               L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+               }).addTo(map);
+
+               /*Icono de inicio*/
+               var inicio = L.icon({
+               iconUrl: '/imagenes/geo-alt.svg',
+
+               iconSize:     [40, 70], 
+               iconAnchor:   [10, 94],
+               popupAnchor:  [3, 6] 
+               });
+
+               /*Icono final*/
+               var final = L.icon({
+               iconUrl: '/imagenes/cake2.svg',
+
+               iconSize:     [40, 70], 
+               iconAnchor:   [10, 94], 
+               popupAnchor:  [3, 6] 
+               });
+               /*Icono del medio*/
+               var track = L.icon({
+               iconUrl: '/imagenes/car-front-fill.svg',
+
+               iconSize:     [40, 70],
+               iconAnchor:   [10, 94], 
+               popupAnchor:  [-3, -76] 
+               });
+
+               var control = L.Routing.control({
+               waypoints: [
+                   L.latLng(latitude, longitude),
+                   L.latLng(37.17059, -3.60552)
+               ],
+               language: 'es',
+               createMarker: function(i, wp, nWps) {
+                   switch (i) {
+                       case 0:
+                       return L.marker(wp.latLng, {
+                           icon: inicio,
+                           draggable: true
+                       }).bindPopup("<b>" + "Inicio" + "</b>");
+                       case nWps - 1:
+                       return L.marker(wp.latLng, {
+                           icon: final,
+                           draggable: true
+                       }).bindPopup("<b>" + "Destino" + "</b>");
+                       default:
+                       return L.marker(wp.latLng, {
+                           icon: track,
+                           draggable: true
+                       }).bindPopup("<b>" + "Waypoint" + "</b>");
+                   }
+               }
+               }).addTo(map);
+
+           
+           
+           });
+       }
+       else{
+           var map = L.map('map', {
+           center: [40.44174394950987, -3.6972421256089176],
+           zoom: 17
+           });
+
+           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+           }).addTo(map);
+       }
+   </script>
+ 
+  
+
+</div>
+</div>
+</div>
+<!--FOOTER DE LA PAGINA-->
+<footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Pasteleria Marta</h3>
+        <p>Sorpréndete con nuestros deliciosos postres y disfruta del gran sabor único de cada uno.</p>
+        <p>Teléfono: 900 000 000 0</p>
+        <p>Email: pasteleriaMarta@pasteleria.com</p>
+      </div>
+  
+  <!--Informacion-->
+  <div class="footer-section">
+    <h4>Información</h4>
+    <ul>
+      <li><a href="#">Especiales</a></li>
+      <li><a href="#">Nuevos productos</a></li>
+    <li><a href="#">Mejores ventas</a></li>
+    <li><a href="#">Nuestras tiendas</a></li>
+    </ul>
+  </div>
+  <!--Redes sociales-->
+  <div class="footer-section">
+    <h4>Síguenos en:</h4>
+        <div class="social-media">
+          <a href="#" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+            </svg>
+          </a>
+        </div>
+  </div>
+  <!--Newsletter-->
+      <div class="footer-section">
+        <h4>Suscribete</h4>
+        <p>Recibe ofertas y noticias exclusivas en tu correo.</p>
+        <form action="lala">
+          <input type="text" placeholder="Tu correo electrónico" required>
+          <textarea name="comentarios" id="comentarios" placeholder="mensaje" required></textarea>
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2015 Pasteleria Marta. Todos los derechos reservados</p>
+    
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/js/javascript2.js"></script>
+</body>
+</html>

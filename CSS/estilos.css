@@ -1,0 +1,796 @@
+ /*Fuentes*/
+ /*Para titulos*/
+ @font-face {
+        font-family: "Rouge Script";
+        src: url("/fonts/RougeScript-Regular.ttf");
+    }
+/*Para el resto del texto*/
+@font-face {
+    font-family: "Delius Swash Caps";
+    src: url(/fonts/DeliusSwashCaps-Regular.ttf);
+}
+/*ESTILOS PARA EL MENU*/
+header{
+    overflow: hidden;
+}
+.custom-navbar {
+    background-color: pink !important; 
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.custom-navbar .nav-link {
+    color: black !important; 
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Delius Swash Caps", sans-serif;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+
+.custom-navbar .nav-link:hover {
+    color: white !important;
+    background-color: brown !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+/* Estilo para el enlace activo */
+.custom-navbar .nav-link.active {
+    color: white !important;
+    background-color: #ff6a9a !important;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Ondulación debajo del menú */
+.wave {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajustes para dispositivos móviles PARA EL MENU */
+@media (max-width: 768px) {
+    .custom-navbar .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/*SECCION 1: Carrusel*/
+.carousel-text{
+    width: 60%;
+}   
+h3{
+    font-family: "Rouge Script";
+    color: #e78bbd;
+    font-weight: bold;
+    
+}
+.text{
+    color: rgb(12, 11, 11);
+    font-family: "Delius Swash Caps";
+}
+#carouselIndex {
+    background-color: #fde4f1;
+    padding: 1.25rem;
+    margin: 1.25rem;
+    margin-top: 50px;
+    margin-left: 500px;
+    margin-bottom: 50px;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.carousel-item {
+    width: 100%;
+    height: auto; 
+    transition: 3s ease;
+    opacity: 1; 
+}
+
+.carousel-item img {
+    width:100%;
+    height: 300px;
+}
+/*ESTILOS DE:Botones del carrusel*/
+.carousel-control-prev{
+    margin-left: 400px;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-size: 100%, 100%;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    z-index: 1;
+}
+
+.carousel {
+    transition: opacity 2s ease;
+    opacity: 1; 
+}
+
+.carousel-inner {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+}
+.carousel-inner:hover {
+    opacity: 1;
+}
+
+/*SECCION 2: Cards*/
+
+.section-cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    
+}
+.card{
+    width: 100%;
+    height: 420px;
+    margin-left: 2rem;
+}
+.card-img-top{
+    width: 100%;
+    height: 200px;
+    
+}
+.card-title{
+    height: 40px;
+    font-family: "Rouge Script";
+    color: #FF6666;
+    text-align: center;
+    font-size: 30px;
+}
+.card-text{
+    height: 40%;
+    margin-top: 20px;
+    font-family: "Delius Swash Caps";
+}
+.btn{
+    background-color: pink;
+    text-align: center;
+    margin-top: 3px;
+    display: block;
+    
+    
+}
+
+/*SECCION 3:Offcanvas*/
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-color: #FFF8F0;
+    margin-top: 40px;
+    
+  }
+
+.sect-left{
+    background-color: #D4B7ED;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 50%;
+   
+}
+.sect-content{
+    display: flex;
+    height: 300px;
+    
+}
+.sect-right{
+    background-color: #FCBEC8;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 50%;
+    
+}
+
+  .imagen {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .content {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    height: 80%;
+  }
+  
+  .content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .content .highlight {
+    color: brown;
+  }
+  
+  .content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  #btn-sect {
+    background-color: pink;
+    color: brown;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    
+  }
+  
+  #btn-sect:hover {
+    background-color: #FF6666;
+  }
+  
+  /*fOOTER*/
+  footer{
+    background-color: #4b1e12;
+    color: #fff;
+    padding-top: 20px;
+  }
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.footer-section{
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+.footer-section h4{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ff6a9a;
+    
+  }
+
+.footer-section ul{
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li{
+    margin-bottom: 10px;
+}
+.footer-section ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-section a:hover{
+    color: #ff6a9a;
+}
+
+.social-media{
+    display: flex;
+    gap: 10px;
+  }
+.social-media a{
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #ff6a9a; 
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .social-media a:hover {
+    background-color: #ff4770; 
+    transform: scale(1.1);
+  }
+  
+  .social-media svg {
+    fill: white; 
+    width: 16px;
+    height: 16px;
+  }
+  
+  .footer-section p{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .footer-section form{
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-section input, .footer-section textarea, .footer-section button{
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+  }
+ 
+  .footer-section button:hover{
+    background-color: #ff6a9a;
+  }
+  .footer-bottom{
+    text-align: center;
+    background-color: #4b1e12;
+    padding: 10px 0;
+    font-size: 12px;
+  }
+/*Estilos del INDEX para pantallas movil o pequeñas*/
+
+/*Optimizar las fuentes*/
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+    .card-title {
+        font-size: 1.2rem;
+    }
+    p, .footer-section p {
+        font-size: 0.9rem;
+    }
+}
+/*Menu movil*/
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+/*Fondos y efectos visuales para móvil*/
+@media (max-width: 768px) {
+    .wave {
+        height: 30px;
+    }
+
+    .wave svg {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+/*Para el carrusel, imagen en tamaño completo*/
+    #carouselIndex{
+        width: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .carousel-control-prev{
+        width: auto;
+        margin: 30px;
+    }
+    
+
+/*Cambiar la dirección de las tarjetas*/
+    .section-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .navbar-brand img {
+        width: 40px;
+        height: 40px;
+    }
+
+/*El menú de navegación en móvil*/
+    .navbar-collapse {
+        text-align: center;
+    }
+/*estilos en el offcanvas en móvil*/
+    .sect-btn a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .sect-left, .sect-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        align-items: center;
+        }
+    
+    .sect-content img {
+        width: 100%;
+        height: auto;
+    }
+/*Ajustes para el footer para móvil*/
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+}
+
+/*ESTILOS DE GALERIA*/
+.title{
+    font-size: 40px;
+    font-family: "Rouge Script";
+    color: #e78bbd;
+    text-align: center;
+    text-decoration: underline 1px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .texto{
+    font-family: "Delius Swash Caps";
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .grid{
+    width: 90%;
+    max-width: 80rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+    gap: 3rem;
+}
+.grid .img{
+    box-shadow: 1rem 1rem 2rem #cecece,
+                -1rem -1rem 2rem #f2f2f2;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.grid .img:hover{
+    transform: scale(.95);
+}
+.grid .img:active{
+    transform: scale(1.1);
+}
+.lightbox{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(210, 193, 218, 0.4);
+    backdrop-filter: blur(2rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+
+}
+.lightbox.isActive{
+    opacity: 1;
+    pointer-events: auto;
+}
+.lightbox .close{
+    width: 3rem;
+    color: #EEA2CC;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.lightbox .close:hover{
+    transform: scale(.95);
+}
+.lightbox:active{
+    transform: scale(1.1);
+}
+#fondo-imagen{
+    background-color: #FFD4D3;
+    max-width: 90%;
+    width: 95%;
+    height: 60vh;
+    box-shadow: 0 0 2rem 0 rgba(0,0,0,.4);
+}
+.big-img{
+    width: 400px;
+    height: 400px;
+    margin-top: 80px;
+    margin-left: 70px;
+    
+    
+}
+.lightbox-content{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left:5%;
+    border: 2px none #000000 ;
+    
+}
+.img{
+    width: 300px;
+    height: 300px;
+}
+#title{
+    color: #e78bbd;
+    margin-bottom: 10px;
+    font-family:"Rouge Script";
+    font-size: 40px;
+    text-align: center;
+}
+.text-and-image-container{
+    display: flex;
+}
+#caption{
+    margin-top: 30px;
+    margin-left: 10px;
+    font-family: "Delius Swash Caps";
+}
+#fondo-texto{
+    background-color: white;
+    width: 60%;
+    font-size: 16px;
+    text-align: left;
+}
+/* Ajustes para pantallas pequeñas o móviles */
+@media (max-width: 768px) {
+    .lightbox-content {
+        width: 90%;
+    }
+
+    .big-img {
+        width: 100%;
+        max-width: 90%;
+        height: auto;
+    }
+
+    #title {
+        font-size: 24px;
+    }
+
+    #caption {
+        font-size: 12px;
+    }
+
+    #fondo-imagen {
+        width: 100%;
+        height: 50vh; 
+    }
+}
+
+/*ESTILOS DE PAGINA DE CONTACTO*/
+/*Estilos de slider de contacto*/
+
+.container-slider{
+    margin-top: 30px;
+    padding: 0;
+
+}
+.slider-wapprer{
+    position: relative;
+    max-width: 35%;
+    margin: 0 auto;
+    
+}
+.slider{
+    margin-top: 10px;
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border: 1px solid #e78bbd ;
+    border-radius: .5rem;
+    
+
+}
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    
+
+}
+.menuslider{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    
+}
+.menuslider a{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color:#e78bbd;
+    opacity: .75;
+    transition: opacity ease 250ms;
+
+}
+.menuslider a:hover{
+    opacity: 100%;
+}
+/*contenedor principal*/
+.container-general{
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+#form-map-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    gap: 100px; 
+    margin-top: 20px;
+    background-color: #fde4f1;
+    margin: 30px;
+}
+
+/*ESTILOS DEL FORMULARIO*/
+
+.title-form{
+    font-family: "Rouge Script", cursive;
+    font-size: 50px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+#contenedor-form{
+    font-family: "Delius Swash Caps";
+    background-color: #FFD4D3;
+    padding: 20px;
+    width: 45%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.valida{
+    width: 90%;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-control label {
+    font-family: "Delius Swash Caps", sans-serif;
+    font-size: 14px;
+    color: #444;
+    font-weight: bold;
+}
+
+.form-control input,
+.form-control textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: "Delius Swash Caps", sans-serif;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    border-color: #ff7b7b;
+    box-shadow: 0 0 5px rgba(255, 123, 123, 0.5);
+   
+}
+
+/*color gris para el select y el input*/
+
+.colorgris {
+    background-color: rgb(182, 180, 180)
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777
+}
+
+.form-control.success input {
+    border-color: #2ecc71
+}
+
+.form-control.error input {
+    border-color: #e74c3c
+}
+
+/*esconder el mensaje*/
+
+small {
+    color: #e74c3c;
+    bottom: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+
+/*visibilizar el mensaje*/
+.form-control.error small {
+    visibility: visible;
+}
+/*ESTILOS DE MAPA*/
+.contenedor-map{
+    position: relative;
+    flex-grow: 1;
+     padding: 0;
+    max-width: 600px;
+    height: auto;
+}
+
+#map{
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    #form-map-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contenedor-form, .contenedor-map {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
+
