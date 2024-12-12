@@ -2,12 +2,12 @@
  /*Para titulos*/
  @font-face {
         font-family: "Rouge Script";
-        src: url("/fonts/RougeScript-Regular.ttf");
+        src: url("../fonts/RougeScript-Regular.ttf");
     }
 /*Para el resto del texto*/
 @font-face {
     font-family: "Delius Swash Caps";
-    src: url(/fonts/DeliusSwashCaps-Regular.ttf);
+    src: url(../fonts/DeliusSwashCaps-Regular.ttf);
 }
 /*ESTILOS PARA EL MENU*/
 header{
@@ -20,6 +20,9 @@ header{
     z-index: 1;
 }
 
+#logo{
+    width: 150px;
+}
 .custom-navbar .nav-link {
     color: black !important; 
     text-decoration: none;
@@ -179,8 +182,18 @@ h3{
     text-align: center;
     margin-top: 3px;
     display: block;
-    
-    
+}
+.btn-primary{
+    background-color: pink;
+    color: brown;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    background-color: #FF6666;
 }
 
 /*SECCION 3:Offcanvas*/
@@ -260,9 +273,22 @@ h3{
     font-size: 14px;
     cursor: pointer;
     
-  }
-  
+  } 
   #btn-sect:hover {
+    background-color: #FF6666;
+  }
+
+  #btn-sect1{
+    background-color: pink;
+    color: brown;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+ 
+  #btn-sect1:hover {
     background-color: #FF6666;
   }
   

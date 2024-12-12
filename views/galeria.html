@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba Carrusel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/estilos.css">
 </head>
 <body>
    <!--CABECERA DE LA PAGINA-->
@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="/imagenes/LOGO-Pasteleria-Marta.png" alt="logo" width="50" height="50">
+                <img src="../imagenes/LOGO-Pasteleria-Marta.png" id="logo" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Inicio</a>
+                        <a class="nav-link" href="../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="galeria.html">Productos</a>
@@ -32,14 +32,7 @@
                 </ul>
             </div>
         </div>
-      <!-- Ondulación SVG -->
-   
     </nav>
-    <div class="wave">
-    <svg viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0 20 Q 30 0 60 20 T 120 20 V 30 H 0 Z" fill="#ffc0cb"></path>
-    </svg>
-</div> 
 </header>
 
       <h2 class="title">
@@ -49,19 +42,19 @@
         Esta es nuestra amplia carta, donde te mostramos nuestros postres caseros y que no podrás resistirte a ellos.
       </p>
       <div class="grid">
-        <img src="/imagenes/imagen01.jfif" alt="Imagen 0" class="img" data-caption="Esta tarta de fresa es súper dulce y cremosa. Ideal para los amantes del mundo rosa" data-title="Tarta de fresas 15.50€" width="1000" height="1500">
-        <img src="/imagenes/imagen02.jfif" alt="Imagen 1" class="img" data-caption="La increible tarta de frambuesa que no te podrás resistir a su sabor tan dulce y azucarado.<p>Puede contener:</p><p>Trazas de frutos secos</p><p>Macarons:un tipo de postre francés que consiste en dos galletas redondas hechas de almendras molidas, azúcar glas y claras de huevo, que se unen mediante un relleno cremoso en el centro.</p>
+        <img src="../imagenes/imagen01.jfif" alt="Imagen 0" class="img" data-caption="Esta tarta de fresa es súper dulce y cremosa. Ideal para los amantes del mundo rosa" data-title="Tarta de fresas 15.50€" width="1000" height="1500">
+        <img src="../imagenes/imagen02.jfif" alt="Imagen 1" class="img" data-caption="La increible tarta de frambuesa que no te podrás resistir a su sabor tan dulce y azucarado.<p>Puede contener:</p><p>Trazas de frutos secos</p><p>Macarons:un tipo de postre francés que consiste en dos galletas redondas hechas de almendras molidas, azúcar glas y claras de huevo, que se unen mediante un relleno cremoso en el centro.</p>
         " data-title="Tarta de Frambuesa" width="1200" height="726">
-        <img src="/imagenes/imagen03.jfif" alt="Imagen 2" class="img" data-caption="Nuestro especial Cupcake de chocolate es súper crujiente y por dentro tiene 3 chocolates: Negro, blanco y leche " data-title="Cupcake de Choco" width="1200" height="675">
-        <img src="/imagenes/imagen04.jfif" alt="Imagen 3" class="img" data-caption="Donut glaseado con escarchamuy crujiente. ¡No probarás algo igual!" data-title="Donut glaseado" width="1000" height="1000">
-        <img src="/imagenes/imagen05.jfif" alt="Imagen 4" class="img" data-caption="El cupcake de vainilla y nata es famosísimo en nuestra tienda por su sabor espectacular" data-title="Cupcake de vainilla y nata" width="601" height="419">
-        <img src="/imagenes/Imagen06.jfif" alt="Imagen 5" class="img" data-caption=" Nuestro Cupcake de chocolate con leche es único y muy sabroso. Su interior está cubierto de crema pastelera." data-title="Cupcake Chocolate-crema" width="289" height="175">
-        <img src="/imagenes/Imagen07.jfif" alt="Imagen 6" class="img" data-caption="Para los amantes de la vainilla, tenemos el cupcake que te va gustar.Un increible sabor a vanillia que te envolverá por completo" data-title="Cupcake de Vainilla" width="225" height="224">
-        <img src="/imagenes/imagen08.jfif" alt="Imagen 7" class="img" data-caption="Si tienes algún evento pronto cerca, no dudes en incluir esta magnifica tarta. Hecha con nata y glaseada de chocolate negro y con fresas por encima que hacen que endulzan tu evento. " data-title="Tarta de chocolate y nata con fresas" width="285" height="177">
-        <img src="/imagenes/imagen09.jfif" alt="Imagen 8" class="img" data-caption="La majestuosa tarta de vainilla, chocolate nutella con fresas no puede faltar en tu dia.Su sabor es inigualble ya que no solo sabe a vainilla y nutella, sino que en su interior tiene una variedad de frutos secos.Esa mezcla de azucar con salado la hace tan magnífica en tu paladar. " data-title="Tarta de vainilla y nutella" width="1200" height="675">
-        <img src="/imagenes/imagen10.jfif" alt="Imagen 9" class="img" data-caption="Aqui tenemos nuestra preciosa tarta de extra de chocolate.¡Ideal para los amantes del chocolate!" data-title="Tarta extra de chocolate" width="1440" height="752">
-        <img src="/imagenes/imagen11.jfif" alt="Imagen 10" class="img" data-caption="Para aquellos que les gusta inovar o no son tan fan de lo tradicional, nuestra tarta de kiwi es perfecta.Tambien le podemos añadir frutos rojos(opcional)" data-title="Tarta de kiwi" width="1440" height="640">
-        <img src="/imagenes/imagen12.jfif" alt="Imagen 11" class="img" data-caption="Pequeño lote de postrecitos, dónde incluyen: un postrecito de chocolate con vainilla y lotus, postrecito de vainilla y fresa, postrecito de fresa y chocolate y postrecito de nata y chocolate con conguitos.Puede pedirse el lote de estas 4 variedades o todas de una misma clase de postrecitos. " data-title="Postrecitos variados " width="1200" height="675">
+        <img src="../imagenes/imagen03.jfif" alt="Imagen 2" class="img" data-caption="Nuestro especial Cupcake de chocolate es súper crujiente y por dentro tiene 3 chocolates: Negro, blanco y leche " data-title="Cupcake de Choco" width="1200" height="675">
+        <img src="../imagenes/imagen04.jfif" alt="Imagen 3" class="img" data-caption="Donut glaseado con escarchamuy crujiente. ¡No probarás algo igual!" data-title="Donut glaseado" width="1000" height="1000">
+        <img src="../imagenes/imagen05.jfif" alt="Imagen 4" class="img" data-caption="El cupcake de vainilla y nata es famosísimo en nuestra tienda por su sabor espectacular" data-title="Cupcake de vainilla y nata" width="601" height="419">
+        <img src="../imagenes/Imagen06.jfif" alt="Imagen 5" class="img" data-caption=" Nuestro Cupcake de chocolate con leche es único y muy sabroso. Su interior está cubierto de crema pastelera." data-title="Cupcake Chocolate-crema" width="289" height="175">
+        <img src="../imagenes/Imagen07.jfif" alt="Imagen 6" class="img" data-caption="Para los amantes de la vainilla, tenemos el cupcake que te va gustar.Un increible sabor a vanillia que te envolverá por completo" data-title="Cupcake de Vainilla" width="225" height="224">
+        <img src="../imagenes/imagen08.jfif" alt="Imagen 7" class="img" data-caption="Si tienes algún evento pronto cerca, no dudes en incluir esta magnifica tarta. Hecha con nata y glaseada de chocolate negro y con fresas por encima que hacen que endulzan tu evento. " data-title="Tarta de chocolate y nata con fresas" width="285" height="177">
+        <img src="../imagenes/imagen09.jfif" alt="Imagen 8" class="img" data-caption="La majestuosa tarta de vainilla, chocolate nutella con fresas no puede faltar en tu dia.Su sabor es inigualble ya que no solo sabe a vainilla y nutella, sino que en su interior tiene una variedad de frutos secos.Esa mezcla de azucar con salado la hace tan magnífica en tu paladar. " data-title="Tarta de vainilla y nutella" width="1200" height="675">
+        <img src="../imagenes/imagen10.jfif" alt="Imagen 9" class="img" data-caption="Aqui tenemos nuestra preciosa tarta de extra de chocolate.¡Ideal para los amantes del chocolate!" data-title="Tarta extra de chocolate" width="1440" height="752">
+        <img src="../imagenes/imagen11.jfif" alt="Imagen 10" class="img" data-caption="Para aquellos que les gusta inovar o no son tan fan de lo tradicional, nuestra tarta de kiwi es perfecta.Tambien le podemos añadir frutos rojos(opcional)" data-title="Tarta de kiwi" width="1440" height="640">
+        <img src="../imagenes/imagen12.jfif" alt="Imagen 11" class="img" data-caption="Pequeño lote de postrecitos, dónde incluyen: un postrecito de chocolate con vainilla y lotus, postrecito de vainilla y fresa, postrecito de fresa y chocolate y postrecito de nata y chocolate con conguitos.Puede pedirse el lote de estas 4 variedades o todas de una misma clase de postrecitos. " data-title="Postrecitos variados " width="1200" height="675">
     </div>
     <div class="lightbox">
         <button class="close">
@@ -139,6 +132,6 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-    <script src="/js/javascript.js"></script>
+    <script src="../js/javascript.js"></script>
 </body>
 </html>
